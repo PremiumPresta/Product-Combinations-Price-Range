@@ -7,5 +7,5 @@
 *}
 
 <div id="blockpricerange" class="block">
-    {l s="Prices range from " mod='blockpricerange'}{convertPrice price=$product_price_min|floatval} {l s="to " mod='blockpricerange'}{convertPrice price=$product_price_max|floatval}
+    {l s='Prices range from ' mod='blockpricerange'}{convertPrice price=$product_price_min|floatval} {l s='to ' mod='blockpricerange'}{convertPrice price=$product_price_max|floatval}
 </div>

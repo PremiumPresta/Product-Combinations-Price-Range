@@ -6,7 +6,10 @@
  *  @copyright 2014 PremiumPresta
  *  @license   http://creativecommons.org/licenses/by-nd/4.0/ CC BY-ND 4.0
  */
-!defined('_PS_VERSION_') && exit;
+
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
 
 class BlockPriceRange extends Module
 {
@@ -65,7 +68,7 @@ class BlockPriceRange extends Module
         if (!empty($product->getAttributeCombinations())) {
             $params['tpl'] = 'hookDisplayRightColumnProduct';
             $params['prod_obj'] = $product;
-            return $this->_getAttributePrices($params);
+            return $this->getAttributePrices($params);
         }
 
         return;
@@ -86,13 +89,13 @@ class BlockPriceRange extends Module
         if (!empty($product->getAttributeCombinations())) {
             $params['tpl'] = 'hookDisplayProductListReviews';
             $params['prod_obj'] = $product;
-            return $this->_getAttributePrices($params);
+            return $this->getAttributePrices($params);
         }
 
         return;
     }
 
-    private function _getAttributePrices($params)
+    private function getAttributePrices($params)
     {
         $product = $params['prod_obj'];
         $product_attrbiute_ids = array();
